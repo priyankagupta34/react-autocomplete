@@ -319,7 +319,7 @@ export default class App extends Component {
                       <div>
                         {sug}
                       </div>
-                      {((this.state.checkvalue !== '@' && this.state.selectedType === '')) &&
+                      {((this.state.checkvalue.charAt(0) !== '@' && this.state.selectedType === '')) &&
                         <button className="removeSuggestionBtn" onClick={this.removeSuggestion.bind(this, sug)}>x</button>
                       }
                     </li>
