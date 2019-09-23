@@ -144,8 +144,9 @@ export default class App extends Component {
   /* When we click in input box, and expect suggestion to show up */
   onfocusDataShouldDisplay = (e) => {
     if (!this.state.checkvalue.includes('@')) {
-      let words = JSON.parse(window.localStorage.getItem('words')).reverse();
+      let words = JSON.parse(window.localStorage.getItem('words'));
       if (words) {
+        words = words.reverse();
         this.setState({
           ...this.state,
           selectedType: '',
@@ -218,12 +219,12 @@ export default class App extends Component {
 
       }
 
-
-      if (this.state.checkvalue.charAt(0) !== '@') {
+      let words = JSON.parse(window.localStorage.getItem("words"));
+      if (this.state.checkvalue.charAt(0) !== '@' && words) {
         this.setState(state => {
           return {
             ...this.state,
-            suggestion: JSON.parse(window.localStorage.getItem("words")).filter(e => e.toLowerCase().includes(this.state.checkvalue))
+            suggestion: words.filter(e => e.toLowerCase().includes(this.state.checkvalue))
           }
         })
       }
@@ -294,11 +295,11 @@ export default class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40 }}>
+        <div className="centered"><h2>For Gopu</h2></div>
+        <div className="flexCenterN">
 
           <div>
-            <div style={{ display: 'flex' }}>
+            <div className="flex">
               <input id="hereInput"
                 onChange={this.openOptionArea.bind(this)}
                 value={this.state.checkvalue}
@@ -326,7 +327,6 @@ export default class App extends Component {
                   )
                 })}
               </div>}
-
 
           </div>
         </div>
