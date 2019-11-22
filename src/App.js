@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react'
+import Footer from './components/Footer';
 
 /* This is a dummy search input box which supports auto complete feature
   1. it saves search history in local but only upto 5 for all intents and purposes, as we don't want search list to increase too much.
@@ -295,7 +296,7 @@ export default class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <div className="centered"><h2>For Gopu</h2></div>
+        <div className="centered"><h2>Auto-complete</h2></div>
         <div className="flexCenterN">
 
           <div>
@@ -332,6 +333,8 @@ export default class App extends Component {
         </div>
 
         <div className="showAfterSearch"><b>{this.state.showingsearchvalue}</b></div>
+
+        <Footer />
       </div>
     )
   }

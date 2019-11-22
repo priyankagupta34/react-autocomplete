@@ -125,6 +125,15 @@ margin: 25px auto;
   margin: 20px auto;
 }
 
+.footer{
+  text-align: center;
+  height: 30px;
+  width: 100%;
+  box-shadow: 0px 0 12px 0px cyan;
+  position: fixed;
+  bottom: 0;
+}
+
 @media screen and (max-width: 1920px) and (min-width: 1600px ){
 
 }
